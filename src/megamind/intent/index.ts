@@ -28,7 +28,7 @@ const rulesMap = new Map([
 ]);
 
 
-const getCommandInent = (command: string): Intent => {
+const getInentByCommand = (command: string): Intent => {
     command = toBotCommand(command).slice(1);
     return Boolean(commandIntentMap[command]) ? commandIntentMap[command] : Intent.Unknow;
 };
@@ -46,7 +46,7 @@ export const getTBotIntent = ({ entities, text }: Message): Intent | null => {
         const commandList = getBotCommandList(entities, text);
         log(JSON.stringify(commandList));
         if (Boolean(commandList.length)) {
-            return getCommandInent(commandList[0]);
+            return getInentByCommand(commandList[0]);
         }
     }
     if (!hasBotMention(entities, text)) {
