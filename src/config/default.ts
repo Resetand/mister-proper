@@ -1,8 +1,8 @@
 const config = {
     tbot: {
-        accessKey: '730142607:AAEaSaaguyfW1zfAd-Uv761YCylvx8aDvrM',
+        accessKey: process.env.TBOT_KEY || '',
         url: 'https://api.telegram.org',
-        botname: 'mister_proper_bot',
+        botame: 'mister_proper_bot',
         nicknames: ['Пропер', 'бот', 'смешарик'],
         userId: 730142607,
     },
