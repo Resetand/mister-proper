@@ -5,7 +5,7 @@
    "engines": {
       "node": "10.16.0",
       "npm": "6.x"
-    },
+   },
    "devDependencies": {
       "@types/jest": "^24.0.13",
       "@types/jsonwebtoken": "^8.3.2",
@@ -41,17 +41,13 @@
       "http": "0.0.0",
       "jsonwebtoken": "^8.5.1",
       "morgan": "^1.9.1",
-      "ngrok": "^3.2.5",
       "node-telegram-bot-api": "^0.30.0",
-      "node-telegram-bot-api-middleware": "^0.1.3",
       "pg": "^7.11.0",
       "reflect-metadata": "^0.1.10",
-      "sqlstring": "^2.3.1",
-      "telegraf": "^3.32.0",
-      "typeorm": "0.2.17"
+      "sqlstring": "^2.3.1"
    },
    "scripts": {
-      "start": "set debug && ts-node-dev --respawn --transpileOnly ./src/server",
+      "start": "set debug=* && ts-node-dev --respawn --transpileOnly ./src/server",
       "set-webhook": "./scripts/set-webhook.sh",
       "migration:run": "ts-node ./node_modules/typeorm/cli.js migration:run",
       "debug": "cross-env TZ=UTC NODE_ENV=development tsnd --inspect --respawn ./src/server",

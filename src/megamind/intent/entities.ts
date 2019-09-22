@@ -1,6 +1,6 @@
 import { MessageEntity } from "node-telegram-bot-api";
 import config from "../../config";
-import { toUsername } from "../utils";
+import { toUsername } from "../../lib/utils";
 
 
 export const hasEntities = (entities: MessageEntity[]) => entities && entities.length;

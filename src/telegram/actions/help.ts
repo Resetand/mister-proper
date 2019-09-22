@@ -6,7 +6,7 @@ export default async (message: Message) => {
         '/shedule - показать график дежурств',
         '/current - текущий дежурный',
         '/respons - что входит в обязанности',
-        '/help - что входит в обязанности',
+        '/help - спискок команд',
     ];
     await sendMessageWithLogs(message.chat.id, skills.join('\n'));
 };

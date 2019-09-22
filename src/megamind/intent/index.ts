@@ -1,4 +1,4 @@
-import { Message, MessageEntity } from "node-telegram-bot-api";
+import { Message } from "node-telegram-bot-api";
 import { hasBotMention, hasCommand, hasEntities } from "./entities";
 import { Command, Intent } from "./types";
 
@@ -27,8 +27,15 @@ const getCommandInent = (command: string): Intent => {
     return Boolean(commandMap[command]) ? commandMap[command] : Intent.Unknow;
 };
 
+export const getTextIntent = (text: string): Intent | null => {
+    for (const [re, intent] of rulesMap.entries()) {
+        if (re.test(text)) {
+            return intent;
+        }
+    }
+};
 
-export const getIntent = ({ entities, text }: Message): Intent | null => {
+export const getTBotIntent = ({ entities, text }: Message): Intent | null => {
     if (hasEntities(entities)) {
         if (hasCommand(entities)) {
             return getCommandInent(text);
@@ -37,10 +44,5 @@ export const getIntent = ({ entities, text }: Message): Intent | null => {
     if (!hasBotMention(entities, text)) {
         return null;
     }
-
-    for (const [re, intent] of rulesMap.entries()) {
-        if (re.test(text)) {
-            return intent;
-        }
-    }
+    return getTextIntent(text);
 };
