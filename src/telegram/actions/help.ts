@@ -3,10 +3,10 @@ import { sendMessageWithLogs } from "../helper";
 
 export default async (message: Message) => {
     const skills = [
-        '/shedule - показать график дежурств',
-        '/current - текущий дежурный',
-        '/respons - что входит в обязанности',
-        '/help - спискок команд',
+        '/shedule - *показать график дежурств*',
+        '/current - *текущий дежурный*',
+        '/respons - *что входит в обязанности*',
+        '/help - *спискок команд*',
     ];
-    await sendMessageWithLogs(message.chat.id, skills.join('\n'));
+    await sendMessageWithLogs(message.chat.id, skills.join('\n'), { parse_mode: 'Markdown' });
 };
