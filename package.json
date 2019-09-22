@@ -4,7 +4,8 @@
    "description": "Api for telegram bot",
    "engines": {
       "node": "10.16.0",
-      "npm": "6.x"
+      "npm": "6.x",
+      "tsc": "3.6.3"
    },
    "devDependencies": {
       "@types/jest": "^24.0.13",
@@ -47,7 +48,7 @@
       "sqlstring": "^2.3.1"
    },
    "scripts": {
-      "start": "export $(cat .env | xargs) && ts-node ./src/server",
+      "start": "export $(cat .env | xargs) && tsc && node build/server/index.js",
       "dev": "export $(cat .env | xargs) && set debug=* && ts-node-dev --respawn --transpileOnly ./src/server",
       "set-webhook": "./scripts/set-webhook.sh",
       "migration:run": "ts-node ./node_modules/typeorm/cli.js migration:run",

@@ -5,10 +5,10 @@ import { log, sendMessageWithLogs } from "../helper";
 
 import currentDuty from "../actions/current-duty";
 import help from "../actions/help";
+import respons from "../actions/respons";
 import schedule from "../actions/schedule";
 import start from "../actions/start";
 import unknow from "../actions/unknow";
-import respons from "../actions/respons";
 
 export default async (message: Message) => {
     log(message);
