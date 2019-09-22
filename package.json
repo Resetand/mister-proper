@@ -2,6 +2,10 @@
    "name": "mister-proper",
    "version": "1.0.0",
    "description": "Api for telegram bot",
+   "engines": {
+      "node": "10.16.0",
+      "npm": "6.x"
+    },
    "devDependencies": {
       "@types/jest": "^24.0.13",
       "@types/jsonwebtoken": "^8.3.2",

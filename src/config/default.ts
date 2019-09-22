@@ -2,7 +2,7 @@ const config = {
     tbot: {
         accessKey: process.env.TBOT_KEY || '',
         url: 'https://api.telegram.org',
-        botame: 'mister_proper_bot',
+        botname: 'mister_proper_bot',
         nicknames: ['Пропер', 'бот', 'смешарик'],
         userId: 730142607,
     },
@@ -18,9 +18,9 @@ const config = {
             { username: 'resetand', isDuty: false },
             { username: 'matvey', isDuty: true },
             { username: 'vugar', isDuty: false },
-        ]
-    }
-}
+        ],
+    },
+};
 
 type RecursivePartial<T> = { [P in keyof T]?: RecursivePartial<T[P]> };
 

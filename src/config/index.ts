@@ -1,13 +1,13 @@
 
 
+import * as merge from 'deepmerge';
+import defaultConfig, { Config, ConfigOverride } from './default';
 import devConfig from './dev';
 import prodConfig from './prod';
-import defaultConfig, { ConfigOverride, Config } from './default'
-import * as merge from 'deepmerge';
 
-const combine = (config: ConfigOverride) => {
-    return merge(defaultConfig, config);
-}
+const combine = (conf: ConfigOverride) => {
+    return merge(defaultConfig, conf);
+};
 
 const env = process.env.NODE_ENV || 'development';
 let config: Config;

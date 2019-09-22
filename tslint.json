@@ -14,7 +14,9 @@
             "severity": "warning",
             "options": ["debug", "info", "log", "time", "timeEnd", "trace"]
         },
-        "quotemark":false
+        "quotemark":false,
+        "object-literal-sort-keys": false,
+        "disable-next-line": true
     },
     "jsRules": {
         "max-line-length": {
