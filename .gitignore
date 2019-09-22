@@ -1,4 +1,4 @@
 build
 node_modules
 
-PRIVATE.key
+*.key
