@@ -14,7 +14,7 @@ let config: Config;
 if (env === 'development') {
     config = combine(devConfig) as Config;
 }
-if (env === 'productions') {
+if (env === 'production') {
     config = combine(prodConfig) as Config;
 }
 
