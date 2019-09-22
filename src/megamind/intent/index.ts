@@ -15,16 +15,17 @@ export const commandIntentMap: Record<Command, Intent> = {
 };
 
 const rulesMap = new Map([
-    [/\дежурный/gi, Intent.CurrentDuty],
-    [/\дежурит/gi, Intent.CurrentDuty],
-    [/\должен/gi, Intent.Responsibility],
-    [/\обязанности/gi, Intent.Responsibility],
-    [/\кто/gi, Intent.CurrentDuty],
-    [/\сейчас/gi, Intent.CurrentDuty],
-    [/\дежурные/gi, Intent.Schedule],
-    [/\список/gi, Intent.Schedule],
-    [/\добавь/gi, Intent.AddDuty],
-    [/\w*/gi, Intent.Unknow],
+    [/создай/i, Intent.CreateSchedule],
+    [/дежурный/i, Intent.CurrentDuty],
+    [/дежурит/i, Intent.CurrentDuty],
+    [/должен/i, Intent.Responsibility],
+    [/обязанности/i, Intent.Responsibility],
+    [/кто/i, Intent.CurrentDuty],
+    [/сейчас/i, Intent.CurrentDuty],
+    [/дежурные/i, Intent.Schedule],
+    [/список/i, Intent.Schedule],
+    [/добавь/i, Intent.AddDuty],
+    [/\.*/i, Intent.Unknow],
 ]);
 
 
