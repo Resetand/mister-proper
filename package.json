@@ -47,7 +47,8 @@
       "sqlstring": "^2.3.1"
    },
    "scripts": {
-      "start": "set debug=* && ts-node-dev --respawn --transpileOnly ./src/server",
+      "start": "export $(cat .env | xargs) && ts-node ./src/server",
+      "dev": "export $(cat .env | xargs) && set debug=* && ts-node-dev --respawn --transpileOnly ./src/server",
       "set-webhook": "./scripts/set-webhook.sh",
       "migration:run": "ts-node ./node_modules/typeorm/cli.js migration:run",
       "debug": "cross-env TZ=UTC NODE_ENV=development tsnd --inspect --respawn ./src/server",
