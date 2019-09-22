@@ -1,92 +1,44 @@
-# mister-proper
+# Mister Proper
 
-Api for telegram bot
+## Api for [telegram bot](https://t.me/mister_proper_bot)
+
+> Бот для менеджмента дежурных в квартире/комнате. Добавьте его в свой чат, сделайте админом, назовите участников и бот станет следить за соблюдением графика дежурств.
+> На данный момент реализован бот в телеграмме
+
+### Что умеет:
+<font size="3"> 
+
+* Сформировать график
+* Показать текущего дежурного
+* Показать список дежурных
+* Отметить факт дежурства
+
+<font size="3"> 
+
 
 ## Quick Start
 
-First modify the `ormconfig.json` file and put your database configuration.
-
 ```bash
-# install deps
-npm install
+# Установливает зависимости 
+npm i
 
-# run in development mode
-# server will listen the 3000 port
-npm run start
+# Инициалирует токен для телеграмм бота
+export TBOT_KEY=...
 
-# run tests
-npm run test
+# запускает сервер на 4000 порту и бота
+npm start
 ```
-You can run it in debug mode:
+Если на [тут](http://localhost:4000/ping) возвращает **pong**,
+a в консоле нет ошибок - все работает и
+можно общаться и дебажить - https://t.me/mister_proper_bot
 
-```bash
-npm run debug
-```
-
-Run `npm run swagger:generate`to generate the swagger file from code.
-
-
-## Default endpoint
-
-This project comes with these endpoints:
-
-`POST` /auth/login 
-> Authenticate the user, return the auth token
-```json
-{
-    username: "myusername",
-    password: "mypassord"
-}
-```
-
-`POST` /auth/login 
-> Register the user
-```json
-{
-    username: "myusername",
-    password: "mypassord"
-}
-```
-
-`POST` auth/change-password
-> Change the user password, you need to put the auth token in the Authorization header
-
-`Authorization: Bearer theauthtoken`
-```json
-{
-    username: "myusername",
-    password: "mypassord"
-}
-```
-
-## Documentation
-
-The swagger document is available at: http://localhost:3000
-
-If you modify the endpoint documentation or add a new one, run the following command:
-```bash
-npm run swagger:generate
-```
-
-## Production
-
-To build the production files:
-
-```bash
-npm run build
-
-# start the server
-node build/lib/server.js
-```
 ## Docker
-
-You can use docker during your developement process.
-First, build the docker image:
+Создать образ:
 ```bash
-docker build -t myapp .
+docker build -t proper .
 ```
 
-And run it:
+Запустить докер образ
 ```bash
-docker run -p 3000:3000 -v $(pwd):/usr/src/app myapp
+docker run --env TBOT_KEY=$TBOT_KEY -p 3000:3000 -v $(pwd):/usr/src/app proper
 ```
