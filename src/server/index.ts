@@ -4,7 +4,7 @@ import { makeTBot } from '../telegram';
 import app from "./app";
 
 const server = http.createServer(app);
-const port = config.ports.http;
+const port = process.env.PORT || 4000;
 export const tbot = makeTBot();
 
 server.listen(port, async (err: Error) => {

@@ -6,10 +6,6 @@ const config = {
         nicknames: ['Пропер', 'бот', 'смешарик'],
         userId: 730142607,
     },
-    ports: {
-        http: 80,
-        https: 443,
-    },
     // Пока нет bd
     __room: {
         members: [

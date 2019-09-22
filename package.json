@@ -55,7 +55,6 @@
       "pretest": "eslint src/**/*.ts",
       "test": "cross-env NODE_ENV=test jest",
       "build": "tsc",
-      "node": "node",
       "swagger:generate": "./node_modules/swagger-jsdoc/bin/swagger-jsdoc.js -d swaggerDef.js src/controllers/*.ts"
    },
    "jest": {
