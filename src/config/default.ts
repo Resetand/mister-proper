@@ -9,11 +9,11 @@ const config = {
     // Пока нет bd
     room: {
         members: [
-            { username: 'nostereal', isDuty: false },
-            { username: 'DotKillah', isDuty: false },
-            { username: 'resetand', isDuty: false },
-            { username: 'matvey', isDuty: true },
-            { username: 'vugar', isDuty: false },
+            { username: 'Vergil190202', name: 'Матвей', isDuty: true },
+            { username: 'nostereal', name: 'Артем', isDuty: false },
+            { username: 'DotKillah', name: 'Илья', isDuty: false },
+            { username: 'resetand', name: 'Кирилл', isDuty: false },
+            { username: 'vugar', name: 'Вугар ', isDuty: false },
         ],
     },
 };

@@ -1,9 +1,11 @@
 import { Message } from "node-telegram-bot-api";
-import { hasBotMention, hasCommand, hasEntities } from "./entities";
+import { log } from "util";
+import { toBotCommand } from "../../lib/utils";
+import { getBotCommandList, hasBotMention, hasEntities } from "./entities";
 import { Command, Intent } from "./types";
 
 
-const commandMap: Record<Command, Intent> = {
+export const commandIntentMap: Record<Command, Intent> = {
     [Command.Start]: Intent.StartMessage,
     [Command.Shedule]: Intent.Schedule,
     [Command.Current]: Intent.CurrentDuty,
@@ -14,7 +16,11 @@ const commandMap: Record<Command, Intent> = {
 
 const rulesMap = new Map([
     [/\дежурный/gi, Intent.CurrentDuty],
+    [/\дежурит/gi, Intent.CurrentDuty],
+    [/\должен/gi, Intent.Responsibility],
+    [/\обязанности/gi, Intent.Responsibility],
     [/\кто/gi, Intent.CurrentDuty],
+    [/\сейчас/gi, Intent.CurrentDuty],
     [/\дежурные/gi, Intent.Schedule],
     [/\список/gi, Intent.Schedule],
     [/\добавь/gi, Intent.AddDuty],
@@ -23,8 +29,8 @@ const rulesMap = new Map([
 
 
 const getCommandInent = (command: string): Intent => {
-    command = command.slice(1);
-    return Boolean(commandMap[command]) ? commandMap[command] : Intent.Unknow;
+    command = toBotCommand(command).slice(1);
+    return Boolean(commandIntentMap[command]) ? commandIntentMap[command] : Intent.Unknow;
 };
 
 export const getTextIntent = (text: string): Intent | null => {
@@ -37,8 +43,10 @@ export const getTextIntent = (text: string): Intent | null => {
 
 export const getTBotIntent = ({ entities, text }: Message): Intent | null => {
     if (hasEntities(entities)) {
-        if (hasCommand(entities)) {
-            return getCommandInent(text);
+        const commandList = getBotCommandList(entities, text);
+        log(JSON.stringify(commandList));
+        if (Boolean(commandList.length)) {
+            return getCommandInent(commandList[0]);
         }
     }
     if (!hasBotMention(entities, text)) {
