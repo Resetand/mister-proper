@@ -1,13 +1,13 @@
 const config = {
     tbot: {
         accessKey: process.env.TBOT_KEY || '',
-        url: 'https://api.telegram.org',
+        url: 't.me/mister_proper_bot',
         botname: 'mister_proper_bot',
         nicknames: ['Пропер', 'бот', 'смешарик'],
         userId: 730142607,
     },
     // Пока нет bd
-    __room: {
+    room: {
         members: [
             { username: 'nostereal', isDuty: false },
             { username: 'DotKillah', isDuty: false },

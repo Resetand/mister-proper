@@ -3,7 +3,7 @@ import config from "../../config";
 import { sendMessageWithLogs } from "../helper";
 
 export default async (message: Message) => {
-    const members = config.__room.members;
+    const members = config.room.members;
     const parts = [
         '***Вот список дежурных:*** \n',
         ...members.map((mem) => `${mem.isDuty ? '🐵' : '🙈'} *** ${mem.username} *** `),
