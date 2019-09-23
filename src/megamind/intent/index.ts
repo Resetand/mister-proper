@@ -1,6 +1,5 @@
 import { Message } from "node-telegram-bot-api";
-import { log } from "util";
-import { toBotCommand, createIncludeRe } from "../../lib/utils";
+import { createIncludeRe, toBotCommand } from "../../lib/utils";
 import { getBotCommandList, hasBotMention, hasEntities } from "./entities";
 import { Command, Intent } from "./types";
 

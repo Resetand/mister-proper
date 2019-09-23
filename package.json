@@ -39,6 +39,7 @@
       "express": "^4.15.4",
       "express-logger": "0.0.3",
       "helmet": "^3.18.0",
+      "heroku-nosleep": "^1.0.3",
       "http": "0.0.0",
       "jsonwebtoken": "^8.5.1",
       "morgan": "^1.9.1",

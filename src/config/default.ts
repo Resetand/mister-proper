@@ -6,6 +6,9 @@ const config = {
         nicknames: ['Пропер', 'бот', 'смешарик'],
         userId: 730142607,
     },
+    heroku: {
+        appUrl: 'https://polar-island-74903.herokuapp.com/',
+    },
     // Пока нет bd
     room: {
         members: [
