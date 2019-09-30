@@ -31,14 +31,14 @@ const {
 
 
 const rules: Record<Intent, RegExp[]> = {
-    [CreateSchedule]: [createIncludeRe('создай')],
-    [CurrentDuty]: [createIncludeRe('дежурный', 'дежурит', 'кто', 'сейчас')],
+    [CreateSchedule]: [createIncludeRe('создай', 'сформируй')],
+    [CurrentDuty]: [createIncludeRe('дежурный', 'дежурит', 'кто', 'сейчас', 'на этой', 'неделе', 'убирается')],
     [Responsibility]: [createIncludeRe('обязанности', 'должен')],
-    [Schedule]: [createIncludeRe('дежурные', 'список', 'покажи')],
+    [Schedule]: [createIncludeRe('дежурные', 'список', 'покажи', 'дай')],
     [AddDuty]: [createIncludeRe('добавь пользователя')],
     [RemoveDuty]: [createIncludeRe('удали пользователя')],
     [HelpMessage]: [createIncludeRe('помоги')],
-    [ShoppingList]: [createIncludeRe('спосок покупок', 'химия', 'химию', 'бытовую')],
+    [ShoppingList]: [createIncludeRe('список покупок', 'химия', 'химию', 'бытовую')],
     [StartMessage]: [createIncludeRe('привет')],
     [AddToShoppingList]: [createIncludeRe('добавь')],
     [RemoveFromShoppingList]: [createIncludeRe('удали')],

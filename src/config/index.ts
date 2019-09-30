@@ -9,7 +9,10 @@ const combine = (conf: ConfigOverride) => {
     return merge(defaultConfig, conf);
 };
 
-const env = process.env.NODE_ENV || 'development';
+type Env = 'development' | 'production';
+
+export const env = process.env.NODE_ENV as Env || 'development';
+
 let config: Config;
 if (env === 'development') {
     config = combine(devConfig) as Config;
