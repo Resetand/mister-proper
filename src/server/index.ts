@@ -8,13 +8,13 @@ import app from "./app";
 // For unable heroku inactive sleep
 
 
-const server = http.createServer(app);
+// const server = http.createServer(app);
 const port = process.env.PORT || 4000;
 export const tbot = makeTBot();
 
 
-server.listen(port, async (err: Error) => {
-    noSleep(`${config.heroku.appUrl}/ping`);
-});
+// server.listen(port, async (err: Error) => {
+//     noSleep(`${config.heroku.appUrl}/ping`);
+// });
 
 
