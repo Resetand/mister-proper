@@ -13,8 +13,8 @@ const config = {
   room: {
     members: [
       { username: "Vergil190202", name: "Матвей", isDuty: false },
-      { username: "nostereal", name: "Артем", isDuty: false },
-      { username: "DotKillah", name: "Илья", isDuty: true },
+      { username: "nostereal", name: "Артем", isDuty: true },
+      { username: "DotKillah", name: "Илья", isDuty: false },
       { username: "resetand", name: "Кирилл", isDuty: false },
       { username: "vugar", name: "Вугар ", isDuty: false }
     ]
